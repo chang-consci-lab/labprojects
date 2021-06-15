@@ -1,0 +1,77 @@
+---
+title: "Interacting with IUCN Red List data in RStudio"
+author: ""
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Installing the package
+
+Note that the code here **only needs to be run ONCE**. Once you have installed a package, you do not need to re-install it.
+
+I recommend running these lines of code in the `Console` which always has the `>` symbol to take in a command).
+
+```{r, eval=FALSE}
+install.packages("rredlist")
+```
+
+You will see something like this - don't be alarmed by the red text!
+
+```{r, echo=FALSE, out.height="780px"}
+knitr::include_graphics("images/installationgunk.png")
+```
+
+# Using the package to interact with the IUCN red list
+
+You will need to modify the code below to pull in ["species narratives"](https://apiv3.iucnredlist.org/api/v3/docs#species-narrative-name) for the set of species you are interested in. The code below can be copied into the text editor pane (top left hand side) and saved as an `R` script or `RMarkdown` file. If you haven't use `RMarkdown` before, I recommend using the `R` script format.
+
+```{r, eval=FALSE}
+library("rredlist") # load rredlist package
+source("/ocean/projects/deb180002p/shared/apiTokensWildlife.R") # load in an API key - this is a temporary solution - longer term, I recommend generating your own key.
+
+species_to_study <- c("Panthera tigris","Pezoporus occidentalis","Eclectus roratus") # providing a vector with several species of interest - replace these names with the ones you are interested in
+
+# Below, we are going to loop through the species in this "species_to_study" vector and pull in their IUCN narrative data using a "for loop"
+   # Then we are going to store the data into an object called sp_out
+sp_out <- NULL # instantiating sp_out output object
+for (species in species_to_study) { 
+  spp_response <- rl_narrative(species, key=IUCN_REDLIST_KEY) # pull in the species narrative
+  sp_out <- rbind(sp_out, spp_response$result) # add the narrative data to the sp_out object, row by row.
+}
+```
+
+Great! We have made the `sp_out` object. Now, how do we store these data? That is really critical because each RStudio Server session has a time limit and we need to be disciplined about saving `R` scripts and data outputs. Here is how you can save the contents of `sp_out` to a Google sheet:
+
+```{r, eval=FALSE}
+googlesheets4::sheet_write(sp_out, ss="https://docs.google.com/spreadsheets/d/1b45m-SKU8Es4Kd9KxEkxNBqsOPrBJw31zMONKW6ypRc/edit?usp=sharing",sheet="spOutInitial")
+```
+
+In this command, you will need to replace `ss=...` with the sharing URL of your Google sheet. The `sheet=...` flag specifies the name of the new tab for the data. **Note!** If you don't change the name of the tab in `sheet=...`, that tab will be overwritten when you re-run this code!
+
+Another way to save the data is to a spreadsheet file in the drive you have as a user on XSEDE. Here is how you can do that:
+
+```{r, eval=FALSE}
+write.table(sp_out, file="~/RAISE_Team1/SpeciesData.tsv", sep="\t")
+```
+
+Here, you will specify the file name in `file=...`. I recommend using the `.tsv` (tab-separated values) extension and `sep="\t"` (separate columns by tabs).
+
+## Reading in the files you have created
+
+Here is the code if you stored the outputs as a google sheet:
+
+```{r, eval=F}
+spDF <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1b45m-SKU8Es4Kd9KxEkxNBqsOPrBJw31zMONKW6ypRc/edit?usp=sharing",sheet="spOutInitial")
+```
+
+As before, change the URL and `sheet=...` as needed.
+
+Here is how you can read in a `.tsv` file:
+
+```{r, eval=F}
+spDF <- read.table(file="~/RAISE_Team1/SpeciesData.tsv")
+```
+
+## Generating an API key
+
+API stands for "application programming interface" and is basically a way to query data with a credential. You can generate your own API key for IUCN Red List by running this command in the console: ``rredlist::rl_use_iucn()`. (Reminder: `package::function` means hey `R`, go and find this `function` in `package`.)

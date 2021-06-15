@@ -1,0 +1,18 @@
+name: "labprojects"
+output_dir: "."
+navbar:
+  title: "CSSL Lab"
+  left:
+    - text: "Overview"
+      icon: fa-home
+      href: index.html
+    - text: "R tutorials"
+      menu:
+        - text: "Googlesheets"
+          href: googlesheets.html
+        - text: "RRedlist"
+          href: rredlist.html
+output:
+  html_document:
+    theme: flatly
+    css: style.css
