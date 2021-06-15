@@ -9,12 +9,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="" />
 
-<meta name="date" content="2021-06-14" />
+<meta name="date" content="2021-06-15" />
 
 <title>Interacting with Googlesheets in RStudio</title>
 
-<script src="site_libs/header-attrs-2.3/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -311,8 +311,7 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Interacting with Googlesheets in RStudio</h1>
-<h4 class="author"></h4>
-<h4 class="date">2021-06-14</h4>
+<h4 class="date">2021-06-15</h4>
 
 </div>
 
@@ -336,24 +335,24 @@ $(document).ready(function () {
 <ol start="2" style="list-style-type: decimal">
 <li>At the same time, another tab will open in your internet browser on your computer, displaying a window that asks you to select which of your Google account(s) to grant access to in <code>RStudio Server</code> using the <code>googlesheets4</code> package.</li>
 </ol>
-<p><img src="/Users/chc02006/Documents/Teaching/ConsSocMedia/slides/misc/grantTidyverse.png" width="551" /></p>
+<p><img src="images/grantTidyverse.png" width="551" /></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Select <code>Allow</code>. Next, you will see:</li>
 </ol>
-<p><img src="/Users/chc02006/Documents/Teaching/ConsSocMedia/slides/misc/permissions.png" width="496" height="700px" /></p>
+<p><img src="images/permissions.png" width="496" height="700px" /></p>
 <ol start="4" style="list-style-type: decimal">
 <li>Select <code>Allow</code> again. This will produce an authorization code that you will then copy and paste into your <code>RStudio</code> session. You can copy the code by pressing the <svg style="height:0.8em;top:.04em;position:relative;" viewBox="0 0 448 512"><path d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z"/></svg> button to the right of the authentication code.</li>
 </ol>
-<p><img src="/Users/chc02006/Documents/Teaching/ConsSocMedia/slides/misc/RStudioOAuthCopyCode.png" width="501" /></p>
+<p><img src="images/RStudioOAuthCopyCode.png" width="501" /></p>
 <ol start="5" style="list-style-type: decimal">
 <li>Next, navigate back to the internet browser tab running <code>RStudio Server</code>. You will paste the code in response to the <code>Enter authorization code</code> prompt waiting in the console.</li>
 </ol>
-<p><img src="/Users/chc02006/Documents/Teaching/ConsSocMedia/slides/misc/RStudioServerInitAuth.png" width="850" /></p>
+<p><img src="images/RStudioServerInitAuth.png" width="850" /></p>
 <ol start="6" style="list-style-type: decimal">
 <li><p>Copy the authorization code into the blank space next to <code>Enter authorization code</code>.</p></li>
 <li><p>Once you paste the code in, you will see this type of successful response, showing you that the authentication has worked and the <code>read_sheet</code> function <code>googlesheets4</code> will return:</p></li>
 </ol>
-<p><img src="/Users/chc02006/Documents/Teaching/ConsSocMedia/slides/misc/RStudioServerCopiedAuthKey.png" width="651" /></p>
+<p><img src="images/RStudioServerCopiedAuthKey.png" width="651" /></p>
 <ol start="8" style="list-style-type: decimal">
 <li><p>Great work! You have successfully authenticated access to your Google account in your <code>RStudio Server</code> user workspace.</p></li>
 <li><p>Going forward, even if you switch sessions, restart your session, or open a new session in XSEDE On Demand’s <code>RStudio Server</code>, you shouldn’t need to re-authenticate access to Google. Instead, your credentials will be stored in a cached file.</p></li>

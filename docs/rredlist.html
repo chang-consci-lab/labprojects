@@ -9,12 +9,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="" />
 
-<meta name="date" content="2021-06-14" />
+<meta name="date" content="2021-06-15" />
 
 <title>Interacting with IUCN Red List data in RStudio</title>
 
-<script src="site_libs/header-attrs-2.3/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -311,8 +311,7 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Interacting with IUCN Red List data in RStudio</h1>
-<h4 class="author"></h4>
-<h4 class="date">2021-06-14</h4>
+<h4 class="date">2021-06-15</h4>
 
 </div>
 
@@ -343,8 +342,9 @@ for (species in species_to_study) {
 <p>Great! We have made the <code>sp_out</code> object. Now, how do we store these data? That is really critical because each RStudio Server session has a time limit and we need to be disciplined about saving <code>R</code> scripts and data outputs. Here is how you can save the contents of <code>sp_out</code> to a Google sheet:</p>
 <pre class="r"><code>googlesheets4::sheet_write(sp_out, ss=&quot;https://docs.google.com/spreadsheets/d/1b45m-SKU8Es4Kd9KxEkxNBqsOPrBJw31zMONKW6ypRc/edit?usp=sharing&quot;,sheet=&quot;spOutInitial&quot;)</code></pre>
 <p>In this command, you will need to replace <code>ss=...</code> with the sharing URL of your Google sheet. The <code>sheet=...</code> flag specifies the name of the new tab for the data. <strong>Note!</strong> If you don’t change the name of the tab in <code>sheet=...</code>, that tab will be overwritten when you re-run this code!</p>
-<p>Another way to save the data is to a spreadsheet file in the drive you have as a user on XSEDE. Here is how you can do that:</p>
-<pre class="r"><code>write.table(sp_out, file=&quot;~/RAISE_Team1/SpeciesData.tsv&quot;, sep=&quot;\t&quot;)</code></pre>
+<p>Another way to save the data is to a spreadsheet file in the drive you have as a user on XSEDE. Here is how you can do that, assuming that you have <code>readr</code> installed. (See the <a href="https://chang-consci-lab.github.io/labprojects/">Overview</a> tab for the installation command for <code>readr</code>.)</p>
+<pre class="r"><code># write.table(sp_out, file=&quot;~/RAISE_Team1/SpeciesData.tsv&quot;, sep=&quot;\t&quot;) # less preferred to the solution below
+readr::write_tsv(sp_out, file=&quot;~/RAISE_Team1/SpeciesData.tsv&quot;)</code></pre>
 <p>Here, you will specify the file name in <code>file=...</code>. I recommend using the <code>.tsv</code> (tab-separated values) extension and <code>sep="\t"</code> (separate columns by tabs).</p>
 <div id="reading-in-the-files-you-have-created" class="section level2">
 <h2>Reading in the files you have created</h2>
@@ -352,7 +352,8 @@ for (species in species_to_study) {
 <pre class="r"><code>spDF &lt;- googlesheets4::read_sheet(&quot;https://docs.google.com/spreadsheets/d/1b45m-SKU8Es4Kd9KxEkxNBqsOPrBJw31zMONKW6ypRc/edit?usp=sharing&quot;,sheet=&quot;spOutInitial&quot;)</code></pre>
 <p>As before, change the URL and <code>sheet=...</code> as needed.</p>
 <p>Here is how you can read in a <code>.tsv</code> file:</p>
-<pre class="r"><code>spDF &lt;- read.table(file=&quot;~/RAISE_Team1/SpeciesData.tsv&quot;)</code></pre>
+<pre class="r"><code># spDF &lt;- read.table(file=&quot;~/RAISE_Team1/SpeciesData.tsv&quot;) # less preferred - see version below
+spDF &lt;- readr::read_tsv(file=&quot;~/RAISE_Team1/SpeciesData.tsv&quot;)</code></pre>
 </div>
 <div id="generating-an-api-key" class="section level2">
 <h2>Generating an API key</h2>

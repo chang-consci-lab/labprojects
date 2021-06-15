@@ -36,25 +36,25 @@ enviro_soc_media_DF <- googlesheets4::read_sheet("https://docs.google.com/spread
 2. At the same time, another tab will open in your internet browser on your computer, displaying a window that asks you to select which of your Google account(s) to grant access to in `RStudio Server` using the `googlesheets4` package.
 
 ```{r, echo=FALSE}
-knitr::include_graphics("~/Documents/Teaching/ConsSocMedia/slides/misc/grantTidyverse.png")
+knitr::include_graphics("images/grantTidyverse.png")
 ```
 
 3. Select `Allow`. Next, you will see:
 
 ```{r, echo=FALSE, out.height="700px"}
-knitr::include_graphics("~/Documents/Teaching/ConsSocMedia/slides/misc/permissions.png")
+knitr::include_graphics("images/permissions.png")
 ```
 
 4. Select `Allow` again. This will produce an authorization code that you will then copy and paste into your `RStudio` session. You can copy the code by pressing the `r fontawesome::fa("copy")` button to the right of the authentication code.
 
 ```{r, echo=FALSE}
-knitr::include_graphics("~/Documents/Teaching/ConsSocMedia/slides/misc/RStudioOAuthCopyCode.png")
+knitr::include_graphics("images/RStudioOAuthCopyCode.png")
 ```
 
 5. Next, navigate back to the internet browser tab running `RStudio Server`. You will paste the code in response to the `Enter authorization code` prompt waiting in the console.
 
 ```{r, echo=FALSE}
-knitr::include_graphics("~/Documents/Teaching/ConsSocMedia/slides/misc/RStudioServerInitAuth.png")
+knitr::include_graphics("images/RStudioServerInitAuth.png")
 ```
 
 6. Copy the authorization code into the blank space next to `Enter authorization code`.
@@ -62,7 +62,7 @@ knitr::include_graphics("~/Documents/Teaching/ConsSocMedia/slides/misc/RStudioSe
 7. Once you paste the code in, you will see this type of successful response, showing you that the authentication has worked and the `read_sheet` function `googlesheets4` will return:
 
 ```{r, echo=FALSE}
-knitr::include_graphics("~/Documents/Teaching/ConsSocMedia/slides/misc/RStudioServerCopiedAuthKey.png")
+knitr::include_graphics("images/RStudioServerCopiedAuthKey.png")
 ```
 
 8. Great work! You have successfully authenticated access to your Google account in your `RStudio Server` user workspace.

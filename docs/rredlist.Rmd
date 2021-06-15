@@ -48,10 +48,11 @@ googlesheets4::sheet_write(sp_out, ss="https://docs.google.com/spreadsheets/d/1b
 
 In this command, you will need to replace `ss=...` with the sharing URL of your Google sheet. The `sheet=...` flag specifies the name of the new tab for the data. **Note!** If you don't change the name of the tab in `sheet=...`, that tab will be overwritten when you re-run this code!
 
-Another way to save the data is to a spreadsheet file in the drive you have as a user on XSEDE. Here is how you can do that:
+Another way to save the data is to a spreadsheet file in the drive you have as a user on XSEDE. Here is how you can do that, assuming that you have `readr` installed. (See the [Overview](https://chang-consci-lab.github.io/labprojects/) tab for the installation command for `readr`.)
 
 ```{r, eval=FALSE}
-write.table(sp_out, file="~/RAISE_Team1/SpeciesData.tsv", sep="\t")
+# write.table(sp_out, file="~/RAISE_Team1/SpeciesData.tsv", sep="\t") # less preferred to the solution below
+readr::write_tsv(sp_out, file="~/RAISE_Team1/SpeciesData.tsv")
 ```
 
 Here, you will specify the file name in `file=...`. I recommend using the `.tsv` (tab-separated values) extension and `sep="\t"` (separate columns by tabs).
@@ -69,7 +70,8 @@ As before, change the URL and `sheet=...` as needed.
 Here is how you can read in a `.tsv` file:
 
 ```{r, eval=F}
-spDF <- read.table(file="~/RAISE_Team1/SpeciesData.tsv")
+# spDF <- read.table(file="~/RAISE_Team1/SpeciesData.tsv") # less preferred - see version below
+spDF <- readr::read_tsv(file="~/RAISE_Team1/SpeciesData.tsv")
 ```
 
 ## Generating an API key
