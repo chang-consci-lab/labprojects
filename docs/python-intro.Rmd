@@ -1,0 +1,61 @@
+---
+title: "Resources to learn Python and Pandas"
+author: ""
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Resources to learn Python in general
+
+For someone with no prior coding background looking to learn Python, especially the data wrangling library Pandas, through Google CoLab notebooks, I recommend the following resources. ALL OF THEM ARE FREE - you should not pay any money to learn these introductory concepts! Also, Google has made interactive notebooks freely available to the public through their "Colab" program. By using a Colab notebook, you don't have to install anything on your machine. You just have to navigate to a website, then you can start writing and executing Python (and `R`) code!
+
+## Getting Started
+
+To use these resources in Google Colab:
+
+1. Go to [Google Colab](https://colab.research.google.com/)
+2. Create a new notebook
+3. Copy code examples from the tutorials into Colab cells
+4. Run the cells to see the results and experiment with the code
+
+### 1. **Python for Everybody Specialization on Coursera**:
+   - **Description**: This specialization, taught by Dr. Charles Severance (also known as Dr. Chuck), is designed for beginners and covers the basics of programming using Python. It starts from the very basics and gradually moves to more complex topics. While the course itself doesn't specifically use CoLab, you can easily practice the examples and exercises in CoLab notebooks.
+   - **Why It's Good for Beginners**: The course is very well-structured for absolute beginners, starting with the very basics of Python and gradually moving to more complex topics, including data structures.
+   - **Link**: [Python for Everybody](https://www.coursera.org/specializations/python)
+
+### 2. **Google's Python Class**:
+   - **Description**: This is a free class for people with a little bit of programming experience who want to learn Python. The class includes written materials, lecture videos, and lots of code exercises to practice Python coding. These materials can be easily accessed and experimented with in CoLab notebooks.
+   - **Why It's Good for Beginners**: The class is designed by Google, ensuring high-quality content and a good structure for beginners to follow. The exercises are practical and provide a good foundation.
+   - **Link**: [Google's Python Class](https://developers.google.com/edu/python/)
+
+### 3. **"Automate the Boring Stuff with Python" by Al Sweigart**:
+   - **Description**: This book is designed for total beginners and covers Python programming basics with practical examples. The book is available for free to read under a Creative Commons license. While not specifically designed for CoLab, the examples and exercises from the book can be practiced in CoLab notebooks.
+   - **Why It's Good for Beginners**: The book focuses on practical programming for total beginners and uses interesting examples to keep the reader engaged.
+   - **Link**: [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
+
+### 4. **Introduction to Data Science in Python on Coursera (University of Michigan)**:
+   - **Description**: This course is part of the Applied Data Science with Python Specialization and is very good for beginners interested in data science. It introduces participants to the basics of Python data analysis using pandas and is a good stepping stone to more advanced data analysis and science concepts.
+   - **Why It's Good for Beginners**: It starts with the basics of pandas, which is essential for data manipulation and analysis in Python, making it suitable for beginners.
+   - **Link**: [Introduction to Data Science in Python](https://www.coursera.org/learn/python-data-analysis)
+   
+## Resources to learn about Pandas
+
+Here are some free resources to help you learn Pandas in a Google Colab environment (that way, you don't have to install anything on your machine). **Note**: You can open a new CoLab notebook by navigating to [https://colab.research.google.com/](https://colab.research.google.com/)
+
+### 1. Official Pandas Documentation: "10 minutes to Pandas"
+
+This quick-start guide from the official Pandas documentation can be easily copied into a Colab notebook:
+
+- [10 minutes to Pandas](https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html)
+
+### 2. Google's Colab Tutorials
+
+Google provides several introductory notebooks that cover Pandas basics:
+
+- [Introduction to Pandas in Python](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/pandas_dataframe_ultraquick_tutorial.ipynb)
+
+### 3. W3Schools Pandas Tutorial
+
+W3Schools offers a comprehensive Pandas tutorial (14 individual lessons!). You can copy and run the code in a CoLab notebook:
+
+- [W3Schools Pandas Tutorial](https://www.w3schools.com/python/pandas/default.asp)

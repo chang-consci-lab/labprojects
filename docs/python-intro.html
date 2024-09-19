@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="" />
+
+<meta name="date" content="2024-09-18" />
+
+<title>Resources to learn Python and Pandas</title>
+
+<script src="site_libs/header-attrs-2.27/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">CSSL Lab</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Overview
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Python tutorials
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="python-intro.html">Python &amp; Pandas</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    R tutorials
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="googlesheets.html">Googlesheets</a>
+    </li>
+    <li>
+      <a href="rredlist.html">RRedlist</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Resources to learn Python and Pandas</h1>
+<h4 class="author"></h4>
+<h4 class="date">2024-09-18</h4>
+
+</div>
+
+
+<div id="resources-to-learn-python-in-general" class="section level1">
+<h1>Resources to learn Python in general</h1>
+<p>For someone with no prior coding background looking to learn Python,
+especially the data wrangling library Pandas, through Google CoLab
+notebooks, I recommend the following resources. ALL OF THEM ARE FREE -
+you should not pay any money to learn these introductory concepts! Also,
+Google has made interactive notebooks freely available to the public
+through their “Colab” program. By using a Colab notebook, you don’t have
+to install anything on your machine. You just have to navigate to a
+website, then you can start writing and executing Python (and
+<code>R</code>) code!</p>
+<div id="getting-started" class="section level2">
+<h2>Getting Started</h2>
+<p>To use these resources in Google Colab:</p>
+<ol style="list-style-type: decimal">
+<li>Go to <a href="https://colab.research.google.com/">Google
+Colab</a></li>
+<li>Create a new notebook</li>
+<li>Copy code examples from the tutorials into Colab cells</li>
+<li>Run the cells to see the results and experiment with the code</li>
+</ol>
+<div id="python-for-everybody-specialization-on-coursera"
+class="section level3">
+<h3>1. <strong>Python for Everybody Specialization on
+Coursera</strong>:</h3>
+<ul>
+<li><strong>Description</strong>: This specialization, taught by
+Dr. Charles Severance (also known as Dr. Chuck), is designed for
+beginners and covers the basics of programming using Python. It starts
+from the very basics and gradually moves to more complex topics. While
+the course itself doesn’t specifically use CoLab, you can easily
+practice the examples and exercises in CoLab notebooks.</li>
+<li><strong>Why It’s Good for Beginners</strong>: The course is very
+well-structured for absolute beginners, starting with the very basics of
+Python and gradually moving to more complex topics, including data
+structures.</li>
+<li><strong>Link</strong>: <a
+href="https://www.coursera.org/specializations/python">Python for
+Everybody</a></li>
+</ul>
+</div>
+<div id="googles-python-class" class="section level3">
+<h3>2. <strong>Google’s Python Class</strong>:</h3>
+<ul>
+<li><strong>Description</strong>: This is a free class for people with a
+little bit of programming experience who want to learn Python. The class
+includes written materials, lecture videos, and lots of code exercises
+to practice Python coding. These materials can be easily accessed and
+experimented with in CoLab notebooks.</li>
+<li><strong>Why It’s Good for Beginners</strong>: The class is designed
+by Google, ensuring high-quality content and a good structure for
+beginners to follow. The exercises are practical and provide a good
+foundation.</li>
+<li><strong>Link</strong>: <a
+href="https://developers.google.com/edu/python/">Google’s Python
+Class</a></li>
+</ul>
+</div>
+<div id="automate-the-boring-stuff-with-python-by-al-sweigart"
+class="section level3">
+<h3>3. <strong>“Automate the Boring Stuff with Python” by Al
+Sweigart</strong>:</h3>
+<ul>
+<li><strong>Description</strong>: This book is designed for total
+beginners and covers Python programming basics with practical examples.
+The book is available for free to read under a Creative Commons license.
+While not specifically designed for CoLab, the examples and exercises
+from the book can be practiced in CoLab notebooks.</li>
+<li><strong>Why It’s Good for Beginners</strong>: The book focuses on
+practical programming for total beginners and uses interesting examples
+to keep the reader engaged.</li>
+<li><strong>Link</strong>: <a
+href="https://automatetheboringstuff.com/">Automate the Boring Stuff
+with Python</a></li>
+</ul>
+</div>
+<div
+id="introduction-to-data-science-in-python-on-coursera-university-of-michigan"
+class="section level3">
+<h3>4. <strong>Introduction to Data Science in Python on Coursera
+(University of Michigan)</strong>:</h3>
+<ul>
+<li><strong>Description</strong>: This course is part of the Applied
+Data Science with Python Specialization and is very good for beginners
+interested in data science. It introduces participants to the basics of
+Python data analysis using pandas and is a good stepping stone to more
+advanced data analysis and science concepts.</li>
+<li><strong>Why It’s Good for Beginners</strong>: It starts with the
+basics of pandas, which is essential for data manipulation and analysis
+in Python, making it suitable for beginners.</li>
+<li><strong>Link</strong>: <a
+href="https://www.coursera.org/learn/python-data-analysis">Introduction
+to Data Science in Python</a></li>
+</ul>
+</div>
+</div>
+<div id="resources-to-learn-about-pandas" class="section level2">
+<h2>Resources to learn about Pandas</h2>
+<p>Here are some free resources to help you learn Pandas in a Google
+Colab environment (that way, you don’t have to install anything on your
+machine). <strong>Note</strong>: You can open a new CoLab notebook by
+navigating to <a
+href="https://colab.research.google.com/">https://colab.research.google.com/</a></p>
+<div id="official-pandas-documentation-10-minutes-to-pandas"
+class="section level3">
+<h3>1. Official Pandas Documentation: “10 minutes to Pandas”</h3>
+<p>This quick-start guide from the official Pandas documentation can be
+easily copied into a Colab notebook:</p>
+<ul>
+<li><a
+href="https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html">10
+minutes to Pandas</a></li>
+</ul>
+</div>
+<div id="googles-colab-tutorials" class="section level3">
+<h3>2. Google’s Colab Tutorials</h3>
+<p>Google provides several introductory notebooks that cover Pandas
+basics:</p>
+<ul>
+<li><a
+href="https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/pandas_dataframe_ultraquick_tutorial.ipynb">Introduction
+to Pandas in Python</a></li>
+</ul>
+</div>
+<div id="w3schools-pandas-tutorial" class="section level3">
+<h3>3. W3Schools Pandas Tutorial</h3>
+<p>W3Schools offers a comprehensive Pandas tutorial (14 individual
+lessons!). You can copy and run the code in a CoLab notebook:</p>
+<ul>
+<li><a
+href="https://www.w3schools.com/python/pandas/default.asp">W3Schools
+Pandas Tutorial</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
