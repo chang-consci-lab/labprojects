@@ -12,7 +12,7 @@ options(tinytex.verbose = TRUE)
 ```
 
 
-<img src="ConservationCodingClubAd.png" alt="Flyer" width="500"/>
+<img src="https://github.com/chang-consci-lab/labprojects/blob/main/docs/ConservationCodingClubAd.png?raw=true" alt="Flyer" width="500"/>
 
 # Conservation Coding Club
 
