@@ -6,6 +6,10 @@ navbar:
     - text: "Overview"
       icon: fa-home
       href: index.html
+    - text: "Python tutorials"
+      menu:
+        - text: "Python & Pandas"
+          href: python-intro.html
     - text: "R tutorials"
       menu:
         - text: "Googlesheets"
