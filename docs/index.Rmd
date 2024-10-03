@@ -17,6 +17,7 @@ options(tinytex.verbose = TRUE)
 
 * [Thursday September 19, 2024: Deforestation](https://colab.research.google.com/drive/1Voqkwp3e_TuegQRVmEYva-0XPb4ff8Gt?usp=sharing)
 * [Thursday September 26, 2024: Urban park access](https://colab.research.google.com/drive/1FErMk8SktgMYfnRXoNCqKGAG4LbrCZVJ?usp=sharing)
+* [Thursday October 3, 2024: Bird collisions  `r fontawesome::fa(name="face-sad-cry")`](https://colab.research.google.com/drive/16JrCcBrzQbUcYvLKZnbS5dCYVpJUhnPR?usp=sharing)
 
 <img src="https://github.com/chang-consci-lab/labprojects/blob/main/docs/ConservationCodingClubAd.png?raw=true" alt="Flyer" width="400"/>
 
