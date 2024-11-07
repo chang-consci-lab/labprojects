@@ -21,6 +21,7 @@ options(tinytex.verbose = TRUE)
 * [Thursday October 10, 2024: Fires in Australia](https://colab.research.google.com/drive/1i-b8x8xyV8oPnL6pCARHQ9PBBpLIfxm8?usp=drive_link)
 * [Thursday October 24, 2024: Palmer penguins](https://colab.research.google.com/drive/1LcLaD1eToEuI6wJMc4Gn2DXXpgOxkMKF?usp=sharing)
 * [Thursday October 31, 2024: Global fisheries](https://colab.research.google.com/drive/1u9PP5Ci6QavuB4nwbUFQnFvcN5mhpHaJ?usp=drive_link)
+* [Thursday November 7, 2024: Bird baths in Australia](https://colab.research.google.com/drive/1bplRWGlH3dO9rU9sncIFpuVXwv7O6GeN?usp=drive_link)
 
 <img src="https://github.com/chang-consci-lab/labprojects/blob/main/docs/ConservationCodingClubAd.png?raw=true" alt="Flyer" width="400"/>
 
