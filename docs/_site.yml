@@ -1,7 +1,7 @@
 name: "labprojects"
 output_dir: "."
 navbar:
-  title: "CSSL Lab"
+  title: "CIA Lab"
   left:
     - text: "Overview"
       icon: fa-home
