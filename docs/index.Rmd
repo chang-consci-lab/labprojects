@@ -24,6 +24,7 @@ options(tinytex.verbose = TRUE)
 * [Thursday November 7, 2024: Bird baths in Australia](https://colab.research.google.com/drive/1bplRWGlH3dO9rU9sncIFpuVXwv7O6GeN?usp=drive_link)
 * [Thursday November 14, 2024: Threatened plants globally](https://colab.research.google.com/drive/1hwkfXupBkPC-AzHoDDEIRupY1xkVEvnm?usp=drive_link)
 * [Thursday November 21, 2024: Wind turbines in Canada](https://colab.research.google.com/drive/1iXvm44zyyjhr8AxPUxA_3tY5S_NfvkmC?usp=drive_link)
+* [Thursday December 5, 2024: Patterns of authorship in NCS studies](https://colab.research.google.com/drive/1kQGGdghex5F7DXc8px06DN82foeWwc58?usp=drive_link)
 
 <img src="https://github.com/chang-consci-lab/labprojects/blob/main/docs/ConservationCodingClubAd.png?raw=true" alt="Flyer" width="400"/>
 
